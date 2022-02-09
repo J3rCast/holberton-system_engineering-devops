@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" -execdir sh -c -printf "%s\n" "${0%.*}"' {} '
+find . -name "*.gif" -type f -printf '%f\n' | sort | tr '.gif' ' '
