@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# script that displays numbers from 1 to 100 but using FizzBuzz
+# Script that prints some information about /rc/passwd.
 FILE=/etc/passwd
 while read -r p
 do
