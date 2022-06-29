@@ -4,8 +4,8 @@ if [ $# -eq 0 ]
 then
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 else
-	for i in $@
+	for i in "$@"
 	do
-		ping -c  5 $i
+		ping -c  5 "$i"
 	done
 fi
