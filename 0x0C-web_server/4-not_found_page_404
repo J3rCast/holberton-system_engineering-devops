@@ -10,8 +10,8 @@
 #    You can’t use systemctl for restarting nginx
 
 # update and install nginx
-# apt-get update
-#apt-get install -y nginx
+apt-get update
+apt-get install -y nginx
 
 # remove in directories in case they exist to avoid errors and then create root directories
 rm -r /var/www/example.com
