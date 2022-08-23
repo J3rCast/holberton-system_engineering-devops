@@ -29,12 +29,7 @@ echo "Hello World" > /var/www/example.com/html/index.html
 touch "/var/www/example.com/html/error_page.html"
 echo "Ceci n'est pas une page" > /var/www/example.com/html/error_page.html
 
-# delete default file content
-# echo " " > /etc/nginx/sites-available/default
-
-# paste new_default file into default file
-# awk '//{system("cat new_default");next}1' /etc/nginx/sites-available/default > /etc/nginx/sites-available/default
-
+# copy the new_default file into sites available directorie
 cp new_default /etc/nginx/sites-available/default
 
 # edit config files
