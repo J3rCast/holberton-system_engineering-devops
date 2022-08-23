@@ -11,7 +11,7 @@ mkdir -p /var/www/example.com/html
 chown -R $USER:$USER /var/www/example.com/html
 chmod -R 755 /var/www
 touch /var/www/example.com/html/index.html
-echo "Hello World" > /var/www/example.com/html/index.html
+echo "Hello World!" > /var/www/example.com/html/index.html
 sed -i 's/root \/var\/www\/html;/root \/var\/www\/example.com\/html;/' /etc/nginx/sites-available/default
 sed -i 's/# server_names_hash_bucket_size 64;/server_names_hash_bucket_size 64;/' /etc/nginx/nginx.conf
 nginx -t
