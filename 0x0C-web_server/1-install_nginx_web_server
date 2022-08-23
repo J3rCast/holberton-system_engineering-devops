@@ -8,6 +8,7 @@
 #      respect above requirements (this script will be run on the server itself)
 #    You can’t use systemctl for restarting nginx
 apt -y install nginx
+rm -r /var/www/example.com
 mkdir -p /var/www/example.com/html
 chown -R $USER:$USER /var/www/example.com/html
 chmod -R 755 /var/www
