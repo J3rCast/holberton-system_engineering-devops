@@ -35,13 +35,10 @@ defaults
 
 frontend http
         bind *:80
-        mode tcp
         default_backend web
-        option tcplog
 
 backend web
         balance roundrobin
-        mode tcp
         server web1 54.227.49.160:80
         server web2 3.88.139.128:80
 
