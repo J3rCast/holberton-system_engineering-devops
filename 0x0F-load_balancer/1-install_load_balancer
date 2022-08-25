@@ -4,6 +4,16 @@
 
 sudo apt-get update
 sudo apt-get install -y haproxy
+text="
+frontend first_frontend
+    bind :80
+    default_backend web_servers
+    
+backend web_servers
+    balance roundrobin
+    server web-01 54.227.49.160
+    server web-02 3.88.139.128"
 
-sudo cp haproxy_default /etc/haproxy/haproxy.cfg
+echo "$text" >> /etc/haproxy/haproxy.cfg
+# sudo cp haproxy_default /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
