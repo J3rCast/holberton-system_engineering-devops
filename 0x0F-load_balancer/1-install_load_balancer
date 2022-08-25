@@ -3,7 +3,7 @@
 # Distribute requests using a roundrobin algorithm
 
 apt install update
-apt install upgrade
 apt install -y haproxy
 cp haproxy_default /etc/haproxy/haproxy.cfg
+echo "ENABLED=1" >> /etc/default/haproxy
 /etc/init.d/haproxy restart
