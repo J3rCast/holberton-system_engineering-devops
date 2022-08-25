@@ -7,6 +7,28 @@
 apt-get update
 apt-get install -y nginx
 
+# remove in directories in case they exist to avoid errors and then create root directories
+rm -r /var/www/example.com
+mkdir -p /var/www/example.com/html
+
+# give permissions to directories and change owners
+chown -R "$USER":"$USER" /var/www/example.com/html
+chmod -R 755 /var/www
+
+# create index file
+touch /var/www/example.com/html/index.html
+echo "Hello World" > /var/www/example.com/html/index.html
+
+# create error file
+touch "/var/www/example.com/html/error_page.html"
+echo "Ceci n'est pas une page" > /var/www/example.com/html/error_page.html
+
+# copy the new_default file into sites available directorie
+cp new_default /etc/nginx/sites-available/default
+
+# edit config files
+sed -i 's/# server_names_hash_bucket_size 64;/server_names_hash_bucket_size 64;/' /etc/nginx/nginx.conf
+
 # copy the new_default file into sites available directorie
 cp new_default_1 /etc/nginx/sites-available/default
 
