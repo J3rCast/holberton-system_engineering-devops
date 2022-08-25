@@ -3,7 +3,15 @@
 # Distribute requests using a roundrobin algorithm
 
 apt-get update
-apt install -y haproxy
-cp haproxy_default /etc/haproxy/haproxy.cfg
-echo "ENABLED=1" >> /etc/default/haproxy
+apt-get install -y haproxy
+text="frontend first_frontend
+    bind :80
+    default_backend web_servers
+    
+backend web_servers
+    balance roundrobin
+    server web-01 34.75.140.247
+    server web-02 54.198.208.252"
+
+echo "$text" >> /etc/haproxy/haproxy.cfg
 /etc/init.d/haproxy restart
