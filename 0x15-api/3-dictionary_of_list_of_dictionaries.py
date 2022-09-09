@@ -4,8 +4,8 @@
 """
 
 
-import requests
 import json
+import requests
 
 if __name__ == "__main__":
     tasks_count = 0
