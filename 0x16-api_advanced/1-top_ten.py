@@ -12,6 +12,9 @@ def top_ten(subreddit):
     headers = {'User-Agent': 'My User Agent 1.0'}
 
     r = requests.get(url, headers=headers, allow_redirects=False)
+    if r.status_code >= 400:
+        print("None")
+        return
     data = r.json()["data"]["children"]
 
     for i in data:
