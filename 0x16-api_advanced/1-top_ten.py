@@ -16,9 +16,3 @@ def top_ten(subreddit):
 
     for i in data:
         print(i["data"]["title"])
-
-import sys
-if len(sys.argv) < 2:
-    print("Please pass an argument for the subreddit to search.")
-else:
-    top_ten(sys.argv[1])
