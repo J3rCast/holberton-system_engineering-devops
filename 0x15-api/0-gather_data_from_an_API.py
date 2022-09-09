@@ -12,10 +12,10 @@ if __name__ == "__main__":
     tasks_count = 0
     tasks_title = []
 
-    r_td = requests.get('https://jsonplaceholder.typicode.com/todos?userId='
-                        + emp_id)
-    r_usr = requests.get('https://jsonplaceholder.typicode.com/users/'
-                         + emp_id)
+    r_td = requests.get('https://jsonplaceholder.typicode.com/todos?userId=' +
+                        emp_id)
+    r_usr = requests.get('https://jsonplaceholder.typicode.com/users/' +
+                         emp_id)
 
     for tasks in r_td.json():
         if tasks.get("completed"):
