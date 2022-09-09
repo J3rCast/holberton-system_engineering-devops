@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     for tasks in r_td.json():
         f = open(str(r_usr.json().get("id")) + ".csv", "a")
-        f.write("\"{}\", \"{}\", \"{}\", \"{}\"\n".format(
+        f.write("\"{}\",\"{}\",\"{}\",\"{}\"\n".format(
                 r_usr.json().get("id"), r_usr.json().get("username"),
                 tasks.get("completed"), tasks.get("title")))
         f.close()
