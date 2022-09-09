@@ -11,10 +11,10 @@ if __name__ == "__main__":
     emp_id = argv[1]
     tasks_count = 0
 
-    r_td = requests.get('https://jsonplaceholder.typicode.com/todos?userId='
-                        + emp_id)
-    r_usr = requests.get('https://jsonplaceholder.typicode.com/users/'
-                        + emp_id)
+    r_td = requests.get('https://jsonplaceholder.typicode.com/todos?userId=' +
+                        emp_id)
+    r_usr = requests.get('https://jsonplaceholder.typicode.com/users/' +
+                         emp_id)
 
     for tasks in r_td.json():
         f = open(str(r_usr.json().get("id")) + ".csv", "a")
